@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Login Required</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-card">
+
+        <!-- LOGIN SCREEN -->
+        <div id="login-screen" class="screen active">
+            <div class="logo-circle">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="11" width="14" height="10" rx="2" stroke="white" stroke-width="1.8"/>
+                    <path d="M8 11V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V11" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <h2>Welcome Back</h2>
+            <p>Log in to access the quiz</p>
+
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <div class="input-wrapper">
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">👁</button>
+                    </div>
+                </div>
+
+                <p class="hint">Demo login: user@example.com / 123456</p>
+
+                <button type="submit" class="main-btn">
+                    <span class="btn-text">Log In</span>
+                    <span class="btn-spinner"></span>
+                </button>
+            </form>
+        </div>
+
+        <!-- QUIZ START SCREEN -->
+        <div id="start-screen" class="screen">
+            <div class="logo-circle">🧠</div>
+            <h2>General Knowledge Quiz</h2>
+            <p>Test yourself with 8 quick questions</p>
+            <button id="start-btn" class="main-btn">Start Quiz</button>
+            <button id="logout-btn" class="text-btn">Log out</button>
+        </div>
+
+        <!-- QUIZ SCREEN -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-top">
+                <span id="question-number">Question 1/8</span>
+                <span id="score-display">Score: 0</span>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress-fill" class="progress-fill"></div>
+            </div>
+
+            <h3 id="question-text">Question goes here</h3>
+
+            <div id="options-container" class="options-container"></div>
+
+            <div id="feedback" class="feedback"></div>
+
+            <button id="next-btn" class="main-btn" style="display:none;">Next Question</button>
+        </div>
+
+        <!-- RESULT SCREEN -->
+        <div id="result-screen" class="screen">
+            <div class="logo-circle" id="result-emoji">🎉</div>
+            <h2>Quiz Complete!</h2>
+            <p id="result-text">You scored X out of 8</p>
+            <div class="score-circle">
+                <span id="final-score">0%</span>
+            </div>
+            <button id="restart-btn" class="main-btn">Try Again</button>
+            <button id="logout-btn-2" class="text-btn">Log out</button>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
